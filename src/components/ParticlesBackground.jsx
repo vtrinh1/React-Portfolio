@@ -13,11 +13,11 @@ function ParticlesBackground() {
     <Container>
         <Particles
             height="100vh"
-            width="100vw"
+            width="100%"
                 params={{
                     "particles": {
                         "number": {
-                            "value": 160,
+                            "value": 80,
                             "density": {
                                 "enable": false
                             }

@@ -6,10 +6,12 @@ import Skill from './components/Skill'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
     <div>
+      <Navbar />
       <Header />
       <ParticlesBackground />
       <About />

@@ -8,11 +8,11 @@ const Container = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  background-color: #fcfcfc;
+  background-color: #cecccc;
 `
 
 const Title = styled.h1`
-  font-size: 64px;
+  font-size: 48px;
   padding: 96px 0px;
 
   :after {

@@ -1,5 +1,6 @@
 import { SiAndroidstudio, SiBootstrap, SiCplusplus, SiCss3, SiGit, SiHtml5, SiJava, SiJavascript, SiMongodb, SiNextDotJs, SiNodeDotJs, SiPhp, SiR, SiReact, SiSass, SiTypescript } from 'react-icons/si'
 import { GrMysql } from 'react-icons/gr'
+import project1 from './images/project1.png'
 
 export const technologyItems = [
   {
@@ -108,3 +109,27 @@ export const languageItems = [
     color: "2d79c7",
   },
 ];
+
+export const projectItems = [
+  {
+    id: 1,
+    img: project1,
+    title: "Airbnb Clone",
+    subtitle: "HTML, CSS, Javascript, Next.js, Tailwind CSS",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    id: 2,
+    img: project1,
+    title: "Ecommerce Website",
+    subtitle: "HTML, CSS, Javascript, Next.js, Tailwind CSS",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    id: 3,
+    img: project1,
+    title: "Admin Dashboard",
+    subtitle: "HTML, CSS, Javascript, Next.js, Tailwind CSS",
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+]

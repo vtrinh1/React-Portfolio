@@ -9,7 +9,7 @@ const SkillIconWrapper = styled.div`
 `
 
 const SkillIcon = styled.div`
-  font-size: 64px;
+  font-size: 44px;
   transition: all 300ms ease;
 `
 
@@ -18,18 +18,18 @@ const SkillName = styled.div`
   bottom: 10px;
   transform: scale(0);
   transition: all 300ms;
-  font-size: 20px;
+  font-size: 16px;
   opacity: 0;
   font-weight: 600;
 `
 
 const Container = styled.div`
   padding: 10px;
-  width: 20%;
+  width: 15%;
   color: #${(props)=>props.color};
   border-radius: 10%;
   box-shadow: 0px 3px 10px -3px rgba(0,0,0,0.54);
-  margin: 12px;
+  margin: 10px;
   position: relative;
   display: flex;
   justify-content: center;
