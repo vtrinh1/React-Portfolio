@@ -1,5 +1,9 @@
 import React from 'react'
+import { SiGithub } from 'react-icons/si'
+import { FaLink } from 'react-icons/fa'
 import styled from 'styled-components'
+
+
 
 const Img = styled.img`
   width: 100%;
@@ -8,22 +12,26 @@ const Img = styled.img`
 
 const DescriptionWrapper = styled.div`
   position: absolute;
+  text-align: start;
   top: 50%;
-  left: 90px;
   transform: translateY(100%);
-  max-width: 550px;
+  max-width: 70%;
   z-index: 3;
   opacity: 0;
   transition: transform 450ms, opacity 300ms;
+  color: #fff;
 `
-const Container = styled.div`
+
+const Wrapper = styled.div`
   display: flex;
-  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
-  border-radius: 20px;
+  justify-content: center;
   overflow: hidden;
   position: relative;
+  transition: all 450ms ease;
+  border-radius: 40px;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
 
-  &:before{
+  :before {
     content: "";
     position: absolute;
     top: 0;
@@ -32,50 +40,94 @@ const Container = styled.div`
     width: 100%;
     background-color: #1c1d25;
     opacity: 0;
-    transition: all 450ms ease-in-out;
+    transition: all 450ms ease;
     z-index: 2;
     transform: translateY(100%);
   }
 
-  &:hover &:before {
-    transform: translateY(0);
-    opacity: 0.7;
+  :hover:before{
+  transform: translateY(0);
+  opacity: 0.8;
   }
 
-  &:hover ${Img}{
-    transform: scale(1.1);
-    filter: blur(5px);
-  } 
+`
+
+const Container = styled.div`
+  margin-bottom: 135px;
+  transition: all 450ms ease;
   
-  &:hover ${DescriptionWrapper}{
+  :last-child {
+    margin-bottom: 135px;
+  }
+
+  :hover {
+    ${Img} {
+      transform: scale(1.1);
+      filter: blur(5px);
+    }
+    ${DescriptionWrapper} {
     opacity: 1;
     transform: translateY(-50%);
+    }
   }
 `
-const Title = styled.div`
+
+const Title = styled.h1`
   font-size: 40px;
-  text-align: left;
-  color: #fff;
+  margin-bottom: 8px;
+  
+  :after {
+    bottom: -8px;
+    content: "";
+    display: block;
+    height: 4px;
+    width: 20%;
+    background: #fff;
+  }
 `
-const SubTitle = styled.div`
-  text-align: left;
-  color: #fff;
+const SubTitle = styled.h2`
+  font-size: 30px;
+  opacity: 0.8;
 `
-const Info = styled.div`
-  margin: 16px 0;
-  text-align: left;
+const Info = styled.p`
+  font-size: 24px;
+  margin: 30px 0;
+  opacity: 0.8;
+`
+
+const LinkWrapper = styled.div`
+  width: 12.5%;
+  display: flex;
+  justify-content: space-between;
+`
+
+const Link = styled.a`
+  font-size: 32px;
+  text-decoration: none;
   color: #fff;
+  transition: 300ms ease;
+  opacity: 0.8;
+
+  :hover {
+    opacity: 0.3;
+  }
 `
 
 function ProjectItem({item}) {
   return (
     <Container>
-      <Img src={item.img} />
-      <DescriptionWrapper>
-        <Title>{item.title}</Title>
-        <SubTitle>{item.subtitle}</SubTitle>
-        <Info>{item.info}</Info>
-      </DescriptionWrapper>
+      <Wrapper>
+        <Img src={item.img} />
+        <DescriptionWrapper>
+          <Title>{item.title}</Title>
+          <SubTitle>{item.subtitle}</SubTitle>
+          <Info>{item.info}</Info>
+          <LinkWrapper>
+            <Link href={item.github} target="_blank"><SiGithub /></Link>
+            <Link href={item.website} target="_blank"><FaLink /></Link>
+          </LinkWrapper>
+        </DescriptionWrapper>
+      </Wrapper>
     </Container>
 
   )

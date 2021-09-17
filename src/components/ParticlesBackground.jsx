@@ -17,7 +17,7 @@ function ParticlesBackground() {
                 params={{
                     "particles": {
                         "number": {
-                            "value": 80,
+                            "value": 40,
                             "density": {
                                 "enable": false
                             }

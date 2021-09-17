@@ -1,6 +1,8 @@
 import { SiAndroidstudio, SiBootstrap, SiCplusplus, SiCss3, SiGit, SiHtml5, SiJava, SiJavascript, SiMongodb, SiNextDotJs, SiNodeDotJs, SiPhp, SiR, SiReact, SiSass, SiTypescript } from 'react-icons/si'
 import { GrMysql } from 'react-icons/gr'
 import project1 from './images/project1.png'
+import project2 from './images/project2.png'
+import project3 from './images/project3.png'
 
 export const technologyItems = [
   {
@@ -114,22 +116,28 @@ export const projectItems = [
   {
     id: 1,
     img: project1,
-    title: "Airbnb Clone",
-    subtitle: "HTML, CSS, Javascript, Next.js, Tailwind CSS",
-    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    title: "E-Commerce Website",
+    subtitle: "HTML, CSS, Javascript, React.js",
+    info: "An eCommerce website designed and built from scratch. It makes use of functional reusable react components, react hooks and styled-components. The website has inbuilt category, product, login, register and shopping cart pages.",
+    github: "https://github.com/vtrinh1/Online-Store-Website",
+    website: "https://github.com/vtrinh1/Online-Store-Website"
   },
   {
     id: 2,
-    img: project1,
-    title: "Ecommerce Website",
-    subtitle: "HTML, CSS, Javascript, Next.js, Tailwind CSS",
-    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    img: project2,
+    title: "Travel Companion",
+    subtitle: "HTML, CSS, Javascript, React.js, Material-ui",
+    info: "A travel website that fetches API data. Google Maps API & Google Places API, based on the location, data filtering, hooks, and refs Creating a User Interface using Material UI.",
+    github: "https://github.com/vtrinh1/Airbnb-Clone",
+    website: "https://github.com/vtrinh1/Airbnb-Clone"
   },
   {
     id: 3,
-    img: project1,
-    title: "Admin Dashboard",
+    img: project3,
+    title: "Airbnb Clone",
     subtitle: "HTML, CSS, Javascript, Next.js, Tailwind CSS",
-    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    info: "An Airbnb website clone built with Next.js and Tailwind CSS. It features a home and search results page with server side rendering implemented into it. lorem lroem lorem lorem api fetches data ",
+    github: "https://github.com/vtrinh1/Airbnb-Clone",
+    website: "https://github.com/vtrinh1/Airbnb-Clone"
   },
 ]

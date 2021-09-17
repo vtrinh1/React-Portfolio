@@ -4,13 +4,13 @@ import { projectItems } from '../data'
 import ProjectItem from './ProjectItem'
 
 const Container = styled.div`
-  height: 300vh;
+  height: 100%;
   text-align: center;
   align-items: center;
   justify-content: flex-start;
-  display: flex;
+  display: flex;  
   flex-direction: column;
-  background-color: #cccc;
+  background-color: #e4e4e4cc;
 `
 
 const Title = styled.h1`
@@ -43,9 +43,6 @@ const Wrapper = styled.div`
   width: 60vw;
 `
 
-const Project = styled.div`
-  margin-bottom: 135px;
-`
 
 
 function Projects() {
@@ -54,9 +51,7 @@ function Projects() {
       <Title>Personal <Span>Projects.</Span></Title>
       <Wrapper>
           {projectItems.map((item) => (
-            <Project>
               <ProjectItem item={item} key={item.id} />
-            </Project>
           ))}
       </Wrapper>
     </Container>
