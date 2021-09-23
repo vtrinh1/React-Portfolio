@@ -2,20 +2,22 @@ import React from 'react'
 import styled from 'styled-components'
 import { languageItems, technologyItems } from '../data'
 import SkillItem from './SkillItem'
+import { lg, md, xl } from '../responsive'
 
 const Container = styled.div`
-  height: 100vh;
+  padding: 96px 0px;
   text-align: center;
   align-items: center;
   justify-content: flex-start;
   display: flex;
   flex-direction: column;
   background-color: #fff;
+  
 `
 
 const Title = styled.h1`
   font-size: 48px;
-  padding: 96px 0px;
+  padding-bottom: 96px;
 
   :after {
     bottom: -8px;
@@ -36,11 +38,20 @@ const Span = styled.span`
 
 const Wrapper = styled.div`
   display: flex;
-  width: 70vw;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 48px;
+  width: 100%;
+  ${xl({ maxWidth: "1300px", justifyContent: "space-between", flexDirection: "row", alignItems: "start" })};
 `
 
 const Skill = styled.div`
   flex: 1;
+  max-width: 600px;
+
+  :first-child {
+    margin-bottom: 96px;
+  }  
 `
 
 const SkillList = styled.div`
@@ -56,7 +67,7 @@ const SkillTitle = styled.h2`
 
 function Stack() {
   return (
-    <Container>
+    <Container id="skills">
       <Title>
         My <Span>Skill Stack.</Span>
       </Title>

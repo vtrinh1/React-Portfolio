@@ -3,17 +3,17 @@ import styled from 'styled-components'
 import me from '../images/me.png'
 
 const Container = styled.div`
-  height: 100vh;
   text-align: center;
   align-items: center;
   display: flex;
   flex-direction: column;
-  background-color: #cecccc;
+  background-color: #ececec;
+  padding: 96px 0px;
 `
 
 const Title = styled.h1`
   font-size: 48px;
-  padding: 96px 0px;
+  padding-bottom: 96px;
 
   :after {
     bottom: -8px;
@@ -38,6 +38,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 60vw;
+  padding-bottom: 48px;
 `
 
 const ImageContainer = styled.div`
@@ -46,17 +47,10 @@ const ImageContainer = styled.div`
   justify-content: center;
 `
 
-const ImageMask = styled.div`
-  width: 20rem;
-  height: 20rem;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-`
-
 const Image = styled.img`
-  height: 40vh;
-  transform: translateX(13px) translateY(-30px) scale(1.4);
+  height: 30vh;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 `
 
 const TextContainer = styled.div`
@@ -78,16 +72,14 @@ function About() {
       <Title>About <Span>Me.</Span></Title>
       <Wrapper>
         <ImageContainer>
-          <ImageMask>
             <Image src={me} />
-          </ImageMask>
         </ImageContainer>
         <TextContainer>
           <Text>
             Building <Span>beautiful</Span>, <Span>responsive</Span> and <Span>customizable</Span> user experiences is my passion. I enjoy pushing myself to take problems and <Span>creating solutions</Span> that positively affect people.
           </Text>
           <Text>
-            Outside of coding, I'm either working towards my fitness goals or fixing my car.   
+            Currently, I am a full-time <Span>computer science</Span> student, a part-time IT operator and private programming tutor! I'm always looking for a challenge and enjoy exploring new areas of work.
           </Text>
         </TextContainer>
       </Wrapper>

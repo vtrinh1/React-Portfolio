@@ -7,7 +7,7 @@ const Container = styled.div`
 
 function Contact() {
   return (
-    <Container>Contact</Container>
+    <Container id="contact">Contact</Container>
   )
 }
 

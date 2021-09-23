@@ -1,21 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
 import { projectItems } from '../data'
+import { md } from '../responsive'
 import ProjectItem from './ProjectItem'
 
 const Container = styled.div`
-  height: 100%;
+  padding: 48px 12px;
   text-align: center;
   align-items: center;
   justify-content: flex-start;
   display: flex;  
   flex-direction: column;
   background-color: #e4e4e4cc;
+  ${md({padding: "96px 12px"})};
 `
 
 const Title = styled.h1`
-  font-size: 48px;
-  padding: 96px;
+  font-size: 32px;
+  padding-bottom: 48px;
+  ${md({fontSize: "48px", paddingBottom: "96px"})};
 
   :after {
     bottom: -8px;
@@ -40,14 +43,16 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  width: 60vw;
+  padding-bottom: 48px;
+  width: 100%;
+  max-width: 800px;
 `
 
 
 
 function Projects() {
   return (
-    <Container>
+    <Container id="projects">
       <Title>Personal <Span>Projects.</Span></Title>
       <Wrapper>
           {projectItems.map((item) => (

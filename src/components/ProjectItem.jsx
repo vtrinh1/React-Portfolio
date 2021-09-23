@@ -15,7 +15,7 @@ const DescriptionWrapper = styled.div`
   text-align: start;
   top: 50%;
   transform: translateY(100%);
-  max-width: 70%;
+  max-width: 70%; 
   z-index: 3;
   opacity: 0;
   transition: transform 450ms, opacity 300ms;
@@ -57,7 +57,7 @@ const Container = styled.div`
   transition: all 450ms ease;
   
   :last-child {
-    margin-bottom: 135px;
+    margin-bottom: 0px;
   }
 
   :hover {
@@ -73,26 +73,16 @@ const Container = styled.div`
 `
 
 const Title = styled.h1`
-  font-size: 40px;
+  font-size: 32px;
   margin-bottom: 8px;
-  
-  :after {
-    bottom: -8px;
-    content: "";
-    display: block;
-    height: 4px;
-    width: 20%;
-    background: #fff;
-  }
 `
 const SubTitle = styled.h2`
-  font-size: 30px;
+  font-size: 24px;
   opacity: 0.8;
 `
 const Info = styled.p`
-  font-size: 24px;
+  font-size: 20px;
   margin: 30px 0;
-  opacity: 0.8;
 `
 
 const LinkWrapper = styled.div`
@@ -102,7 +92,7 @@ const LinkWrapper = styled.div`
 `
 
 const Link = styled.a`
-  font-size: 32px;
+  font-size: 28px;
   text-decoration: none;
   color: #fff;
   transition: 300ms ease;

@@ -10,6 +10,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
+  margin-top: -64px;
 `
 
 const Wrapper = styled.div`
@@ -38,11 +39,12 @@ const SocialIcons = styled.div`
   text-align: center;
   justify-content: center;
 `
-const SocialIcon = styled.div`
+const SocialIcon = styled.a`
   padding: 0 10px;
   color: #FF6F3C;
   cursor: pointer;
   transition: all 200ms ease-in;
+  height: 24px;
 
   &:hover {
     color: #FF9A3C;
@@ -56,10 +58,10 @@ function Header() {
       <HeaderTitle>Hey <Span>I'm Vincent.</Span></HeaderTitle>
       <HeaderText>I'm an aspiring <Span>Frontend Software Engineer</Span> with a strong passion for building web applications with great user experiences.</HeaderText>
       <SocialIcons>
-        <SocialIcon><GitHub /></SocialIcon>
-        <SocialIcon><LinkedIn /></SocialIcon>
-        <SocialIcon><Email /></SocialIcon>
-        <SocialIcon><AttachFile /></SocialIcon>
+        <SocialIcon href="https://github.com/vtrinh1" target="_blank"><GitHub /></SocialIcon>
+        <SocialIcon href="https://www.linkedin.com/in/vincenttrinh1/" target="_blank"><LinkedIn /></SocialIcon>
+        <SocialIcon href="mailto:vincent.trinh1@hotmail.com" target="_blank"><Email /></SocialIcon>
+        <SocialIcon href="https://github.com/vtrinh1" target="_blank"><AttachFile /></SocialIcon>
       </SocialIcons>
       </Wrapper>
     </Container>

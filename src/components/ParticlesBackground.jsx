@@ -5,7 +5,9 @@ import styled from 'styled-components';
 const Container = styled.div`
   position: absolute;
   margin-top: -100vh;
-  z-index: 1;
+  height: 100vh;
+  width: 99vw;
+  z-index: -1;
 `
 
 function ParticlesBackground() {
@@ -13,7 +15,7 @@ function ParticlesBackground() {
     <Container>
         <Particles
             height="100vh"
-            width="100%"
+            width="99vw"
                 params={{
                     "particles": {
                         "number": {

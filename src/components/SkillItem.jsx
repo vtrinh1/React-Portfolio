@@ -25,7 +25,7 @@ const SkillName = styled.div`
 
 const Container = styled.div`
   padding: 10px;
-  width: 15%;
+  width: 100px;
   color: #${(props)=>props.color};
   border-radius: 10%;
   box-shadow: 0px 3px 10px -3px rgba(0,0,0,0.54);
