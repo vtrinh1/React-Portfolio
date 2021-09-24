@@ -2,6 +2,7 @@ import React from 'react'
 import { SiGithub } from 'react-icons/si'
 import { FaLink } from 'react-icons/fa'
 import styled from 'styled-components'
+import { md, sm } from '../responsive'
 
 
 
@@ -73,16 +74,20 @@ const Container = styled.div`
 `
 
 const Title = styled.h1`
-  font-size: 32px;
+  font-size: 28px;
   margin-bottom: 8px;
+  ${md({fontSize: "32px"})};
+
 `
 const SubTitle = styled.h2`
-  font-size: 24px;
+  font-size: 20px;
   opacity: 0.8;
+  ${md({fontSize: "24px"})};
 `
 const Info = styled.p`
-  font-size: 20px;
+  font-size: 16px;
   margin: 30px 0;
+  ${md({fontSize: "20px"})};
 `
 
 const LinkWrapper = styled.div`

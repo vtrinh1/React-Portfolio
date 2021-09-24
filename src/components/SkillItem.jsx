@@ -1,16 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
+import { md } from '../responsive'
 
 const SkillIconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px;
+  padding: 12px;
+  ${md({padding: "16px"})};
 `
 
 const SkillIcon = styled.div`
-  font-size: 44px;
+  font-size: 32px;
   transition: all 300ms ease;
+  ${md({fontSize: "44px"})};
+
 `
 
 const SkillName = styled.div`
@@ -18,21 +22,24 @@ const SkillName = styled.div`
   bottom: 10px;
   transform: scale(0);
   transition: all 300ms;
-  font-size: 16px;
+  font-size: 14px;
   opacity: 0;
   font-weight: 600;
+  ${md({fontSize: "16px"})};
 `
 
 const Container = styled.div`
   padding: 10px;
-  width: 100px;
+  width: 75px;
   color: #${(props)=>props.color};
+  background-color: ${(props) => (props.light ? "transparent" : "#1f1f1f")};
   border-radius: 10%;
   box-shadow: 0px 3px 10px -3px rgba(0,0,0,0.54);
   margin: 10px;
   position: relative;
   display: flex;
   justify-content: center;
+  ${md({width: "100px"})};
 
   &:hover ${SkillIcon}{
     filter: brightness(80%);
@@ -46,9 +53,9 @@ const Container = styled.div`
   }
 `
 
-function SkillItem({item}) {
+function SkillItem({item, theme}) {
   return (
-    <Container color={item.color}>
+    <Container color={item.color} light={theme === "light"}>
       <SkillIconWrapper>
         <SkillIcon>{item.icon}</SkillIcon>
       </SkillIconWrapper>

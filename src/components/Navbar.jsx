@@ -2,12 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import { ReactComponent as Logo } from '../images/logo.svg'
 import { Link as LinkS } from "react-scroll";
+import { FiMoon, FiSun } from "react-icons/fi";
 
 const Container = styled.div`
   justify-content: center;
   display: flex;
   height: 64px;
 `
+
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -20,6 +22,7 @@ const LeftWrapper = styled.div`
 const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
+  color: white; 
   svg {
     width: 48px;
     height: 48px;
@@ -51,13 +54,23 @@ const NavLink = styled(LinkS)`
       height: 3px;
       left: 50%;
       position: absolute;
-      background: #000;
+      background: ${(props) => (props.light ? "black" : "white")};
       transition: width 0.3s ease 0s, left 0.3s ease 0s;
       width: 0;
     }
 `
 
-function Navbar() {
+const Toggle = styled.button`
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 32px;
+`;
+
+
+function Navbar({ themeToggler, theme }) {
+  const icon = theme === "light" ? <FiMoon color={"#000"} /> : <FiSun color={"#fff"} />
+
   return (
     <Container>
       <Wrapper>
@@ -68,12 +81,13 @@ function Navbar() {
         </LogoWrapper>
       </LeftWrapper>
       {/* right */}
-      <RightWrapper>
+      <RightWrapper >
           <NavLink
             to="about"
             smooth={true}
             duration={750}
             exact="true"
+            light={theme === "light"}
           >
             About
           </NavLink>
@@ -82,6 +96,7 @@ function Navbar() {
             smooth={true}
             duration={750}
             exact="true"
+            light={theme === "light"}
           >
             Skills
           </NavLink>
@@ -90,11 +105,14 @@ function Navbar() {
             smooth={true}
             duration={750}
             exact="true"
+            light={theme === "light"}
           >
             Projects
           </NavLink>
-          <NavLink>
-            O
+          <NavLink light={theme === "light"} >
+            <Toggle onClick={themeToggler}>
+              {icon}
+            </Toggle>
           </NavLink>
       </RightWrapper>
       

@@ -11,7 +11,7 @@ const Container = styled.div`
   justify-content: flex-start;
   display: flex;  
   flex-direction: column;
-  background-color: #e4e4e4cc;
+  background-color: ${(props) => (props.light ? "#ececec" : "#1f1f1f")};
   ${md({padding: "96px 12px"})};
 `
 
@@ -43,16 +43,15 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  padding-bottom: 48px;
   width: 100%;
   max-width: 800px;
 `
 
 
 
-function Projects() {
+function Projects({ theme }) {
   return (
-    <Container id="projects">
+    <Container id="projects" light={theme === "light"}>
       <Title>Personal <Span>Projects.</Span></Title>
       <Wrapper>
           {projectItems.map((item) => (

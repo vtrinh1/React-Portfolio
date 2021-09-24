@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { AttachFile, Email, LinkedIn } from '@material-ui/icons';
 import GitHub from '@material-ui/icons/GitHub';
+import { md } from '../responsive';
 
 const Container = styled.div`
   text-align: center;
@@ -11,15 +12,18 @@ const Container = styled.div`
   flex-direction: column;
   height: 100vh;
   margin-top: -64px;
+  padding: 0px 12px;
 `
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `
 
 const HeaderTitle = styled.h1`
-  font-size: 84px;
+  font-size: 64px;
+  ${md({fontSize: "84px"})};
 `
 
 const Span = styled.span`
@@ -28,9 +32,10 @@ const Span = styled.span`
 
 const HeaderText = styled.p`
   font-weight: 500;
-  font-size: 24px;
-  width: 60vh;
+  font-size: 18px;
+  max-width: 500px;
   padding: 20px 0px;
+  ${md({fontSize: "24px"})};
 `
 
 const SocialIcons = styled.div`
@@ -55,7 +60,7 @@ function Header() {
   return (
     <Container id="home">
       <Wrapper>
-      <HeaderTitle>Hey <Span>I'm Vincent.</Span></HeaderTitle>
+      <HeaderTitle>Hey I'm <Span>Vincent.</Span></HeaderTitle>
       <HeaderText>I'm an aspiring <Span>Frontend Software Engineer</Span> with a strong passion for building web applications with great user experiences.</HeaderText>
       <SocialIcons>
         <SocialIcon href="https://github.com/vtrinh1" target="_blank"><GitHub /></SocialIcon>

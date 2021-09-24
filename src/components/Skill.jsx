@@ -2,22 +2,23 @@ import React from 'react'
 import styled from 'styled-components'
 import { languageItems, technologyItems } from '../data'
 import SkillItem from './SkillItem'
-import { lg, md, xl } from '../responsive'
+import { md, xl } from '../responsive'
 
 const Container = styled.div`
-  padding: 96px 0px;
+  padding: 48px 12px;
   text-align: center;
   align-items: center;
   justify-content: flex-start;
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  ${md({padding: "96px 12px"})};
   
 `
 
 const Title = styled.h1`
-  font-size: 48px;
-  padding-bottom: 96px;
+  font-size: 32px;
+  padding-bottom: 48px;
+  ${md({fontSize: "48px", paddingBottom: "96px"})};
 
   :after {
     bottom: -8px;
@@ -40,17 +41,19 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 48px;
   width: 100%;
   ${xl({ maxWidth: "1300px", justifyContent: "space-between", flexDirection: "row", alignItems: "start" })};
 `
 
 const Skill = styled.div`
   flex: 1;
-  max-width: 600px;
+  max-width: 550px;
+  ${md({maxWidth: "600px"})};
 
   :first-child {
-    margin-bottom: 96px;
+    margin-bottom: 24px;
+    ${md({marginBottom: "64px"})};
+    ${xl({marginBottom: "0"})};
   }  
 `
 
@@ -61,11 +64,12 @@ const SkillList = styled.div`
 `
 
 const SkillTitle = styled.h2`
-  font-size: 32px;
-  padding-bottom: 36px;
+  font-size: 24px;
+  padding-bottom: 18px;
+  ${md({fontSize: "32px", paddingBottom: "36px"})};
 `
 
-function Stack() {
+function Stack({ theme }) {
   return (
     <Container id="skills">
       <Title>
@@ -78,7 +82,7 @@ function Stack() {
           </SkillTitle>
             <SkillList>
               {technologyItems.map((item) => (
-                <SkillItem item={item} key={item.id} />
+                <SkillItem item={item} key={item.id} theme={theme} />
               ))}
             </SkillList>
         </Skill>
@@ -88,7 +92,7 @@ function Stack() {
           </SkillTitle>
             <SkillList>
               {languageItems.map((item) => (
-                <SkillItem item={item} key={item.id} />
+                <SkillItem item={item} key={item.id} theme={theme} />
               ))}
             </SkillList>
         </Skill>
