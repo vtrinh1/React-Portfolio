@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ReactComponent as Logo } from '../images/logo.svg'
 import { Link as LinkS } from "react-scroll";
 import { FiMoon, FiSun } from "react-icons/fi";
 
@@ -8,25 +7,21 @@ const Container = styled.div`
   justify-content: center;
   display: flex;
   height: 64px;
+  padding: 15px 48px;
 `
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 50vw;
+  width: 100%;
+  max-width: 900px;
 `
 const LeftWrapper = styled.div`
   display: flex;
   align-items: center;
-`
-const LogoWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  color: white; 
-  svg {
-    width: 48px;
-    height: 48px;
-  }
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
 `
 
 const RightWrapper = styled.div`
@@ -39,8 +34,8 @@ const NavLink = styled(LinkS)`
   position: relative;
   font-weight: 500;
   font-size: 24px;
-  padding: 0px 16px 8px 16px;
   cursor: pointer;
+  padding: 10px 25px;
 
   &:hover:after { 
       width: 80%;
@@ -61,10 +56,22 @@ const NavLink = styled(LinkS)`
 `
 
 const Toggle = styled.button`
+    display: flex;
+    align-items: center;
     cursor: pointer;
     border: none;
     background: none;
     font-size: 32px;
+    transition: all 150ms;
+
+  :hover  {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+
+  :active {
+    transform: scale(0.9);
+  }
 `;
 
 
@@ -74,48 +81,51 @@ function Navbar({ themeToggler, theme }) {
   return (
     <Container>
       <Wrapper>
-      {/* left */}
-      <LeftWrapper>
-        <LogoWrapper>
-          <Logo />
-        </LogoWrapper>
-      </LeftWrapper>
-      {/* right */}
-      <RightWrapper >
+        {/* left */}
+        <LeftWrapper>
           <NavLink
-            to="about"
-            smooth={true}
-            duration={750}
-            exact="true"
-            light={theme === "light"}
-          >
-            About
-          </NavLink>
-          <NavLink
-            to="skills"
-            smooth={true}
-            duration={750}
-            exact="true"
-            light={theme === "light"}
-          >
-            Skills
-          </NavLink>
-          <NavLink
-            to="projects"
-            smooth={true}
-            duration={750}
-            exact="true"
-            light={theme === "light"}
-          >
-            Projects
-          </NavLink>
-          <NavLink light={theme === "light"} >
-            <Toggle onClick={themeToggler}>
-              {icon}
-            </Toggle>
-          </NavLink>
-      </RightWrapper>
-      
+              to="about"
+              smooth={true}
+              duration={750}
+              exact="true"
+              light={theme === "light"}
+            >
+              ABOUT
+            </NavLink>
+            <NavLink
+              to="skills"
+              smooth={true}
+              duration={750}
+              exact="true"
+              light={theme === "light"}
+            >
+              SKILLS
+            </NavLink>
+            <NavLink
+              to="projects"
+              smooth={true}
+              duration={750}
+              exact="true"
+              light={theme === "light"}
+            >
+              PROJECTS
+            </NavLink>
+            <NavLink
+              to="contact"
+              smooth={true}
+              duration={750}
+              exact="true"
+              light={theme === "light"}
+            >
+              CONTACT
+            </NavLink>
+        </LeftWrapper>
+        {/* right */}
+        <RightWrapper >
+          <Toggle onClick={themeToggler}>
+            {icon}
+          </Toggle>
+        </RightWrapper>
       </Wrapper>
     </Container>
   )

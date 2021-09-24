@@ -2,7 +2,7 @@ import React from 'react'
 import { SiGithub } from 'react-icons/si'
 import { FaLink } from 'react-icons/fa'
 import styled from 'styled-components'
-import { md, sm } from '../responsive'
+import { md } from '../responsive'
 
 
 
@@ -54,8 +54,9 @@ const Wrapper = styled.div`
 `
 
 const Container = styled.div`
-  margin-bottom: 135px;
+  margin-bottom: 80px;
   transition: all 450ms ease;
+  ${md({marginBottom: "135px"})};
   
   :last-child {
     margin-bottom: 0px;

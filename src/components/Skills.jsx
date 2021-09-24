@@ -12,7 +12,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   ${md({padding: "96px 12px"})};
-  
 `
 
 const Title = styled.h1`
@@ -42,7 +41,7 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  ${xl({ maxWidth: "1300px", justifyContent: "space-between", flexDirection: "row", alignItems: "start" })};
+  ${xl({ maxWidth: "1300px", justifyContent: "space-between", flexDirection: "row", alignItems: "start", paddingBottom: "48px" })};
 `
 
 const Skill = styled.div`
@@ -78,7 +77,7 @@ function Stack({ theme }) {
       <Wrapper>
         <Skill>
           <SkillTitle>
-            <Span>Technology</Span> I've used.
+            <Span>Technologies</Span> I've used.
           </SkillTitle>
             <SkillList>
               {technologyItems.map((item) => (

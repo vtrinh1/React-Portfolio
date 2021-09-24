@@ -45,6 +45,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 800px;
+  ${md({paddingBottom: "48px"})};
 `
 
 

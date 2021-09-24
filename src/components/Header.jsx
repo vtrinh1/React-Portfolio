@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { AttachFile, Email, LinkedIn } from '@material-ui/icons';
+import { Email, LinkedIn, Twitter } from '@material-ui/icons';
 import GitHub from '@material-ui/icons/GitHub';
 import { md } from '../responsive';
 
@@ -11,7 +11,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  margin-top: -64px;
+  margin-top: -94px;
   padding: 0px 12px;
 `
 
@@ -66,7 +66,7 @@ function Header() {
         <SocialIcon href="https://github.com/vtrinh1" target="_blank"><GitHub /></SocialIcon>
         <SocialIcon href="https://www.linkedin.com/in/vincenttrinh1/" target="_blank"><LinkedIn /></SocialIcon>
         <SocialIcon href="mailto:vincent.trinh1@hotmail.com" target="_blank"><Email /></SocialIcon>
-        <SocialIcon href="https://github.com/vtrinh1" target="_blank"><AttachFile /></SocialIcon>
+        <SocialIcon href="https://twitter.com/VinnieTrinnie" target="_blank"><Twitter /></SocialIcon>
       </SocialIcons>
       </Wrapper>
     </Container>

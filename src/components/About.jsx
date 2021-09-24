@@ -43,34 +43,48 @@ const Wrapper = styled.div`
   width: 100%;
   max-width: 1000px;
   flex-direction: column;
-  ${md({flexDirection: "row"})};
+  
+  ${md({flexDirection: "row", paddingBottom: "48px"})};
 `
 
 const ImageContainer = styled.div`
-  flex: 1;
+  flex: 0.4;
   display: flex;
   justify-content: center;
+  margin-bottom: 32px;
 `
 
 const Image = styled.img`
-  height: 24vh;
+  height: 20vh;
   border-radius: 50%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   ${md({height: "30vh"})};
 `
 
-const TextContainer = styled.div`
-  flex: 1;
+const Description = styled.div`
+  flex: 0.6;
   display: flex;
   flex-direction: column;
+  max-width: 500px;
 `
 
 const Text = styled.p`
   font-weight: 500;
   font-size: 18px;
-  text-align: left;
-  padding: 12px 0px;
-  ${md({fontSize: "24px"})};
+  text-align: center;
+  margin-bottom: 18px;
+  ${md({fontSize: "22px", textAlign: "left"})};
+`
+
+const Resume = styled.div`
+  text-align: center;
+  ${md({textAlign: "left"})};
+`
+const Button = styled.button`
+  cursor: pointer;
+  font-size: 20px;
+  padding: 5px 30px;
+  ${md({fontSize: "22px"})};
 `
 
 function About({ theme }) {
@@ -81,14 +95,22 @@ function About({ theme }) {
         <ImageContainer>
             <Image src={me} />
         </ImageContainer>
-        <TextContainer>
-          <Text>
-            Building <Span>beautiful</Span>, <Span>responsive</Span> and <Span>customizable</Span> user experiences is my passion. I enjoy pushing myself to take problems and <Span>creating solutions</Span> that positively affect people.
-          </Text>
-          <Text>
-            Currently, I am a full-time <Span>computer science</Span> student, a part-time IT operator and private programming tutor! I'm always looking for a challenge and enjoy exploring new areas of work.
-          </Text>
-        </TextContainer>
+        <Description>
+            <Text>
+              Building <Span>beautiful</Span>, <Span>responsive</Span> and <Span>customizable</Span> user experiences is my passion. I enjoy pushing myself to take problems and <Span>creating solutions</Span> that positively affect people.
+            </Text>
+            <Text>
+              Currently, I am a full-time <Span>computer science</Span> student, a part-time IT operator and private coding tutor.
+            </Text>
+            <Text>
+              Check out my resume!
+            </Text>
+            <Resume>
+              <Button>
+                Resume
+              </Button>
+            </Resume>
+        </Description>
       </Wrapper>
     </Container>
   )

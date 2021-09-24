@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import About from './components/About'
 import Header from './components/Header'
 import ParticlesBackground from './components/ParticlesBackground'
-import Skill from './components/Skill'
+import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -24,7 +24,7 @@ function App() {
       <Header />
       <ParticlesBackground />
       <About theme={theme} />
-      <Skill theme={theme} />
+      <Skills theme={theme} />
       <Projects theme={theme} />
       <Contact theme={theme} />
       <ParticlesBackground />
