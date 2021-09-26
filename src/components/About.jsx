@@ -1,3 +1,4 @@
+import Aos from 'aos'
 import React from 'react'
 import styled from 'styled-components'
 import me from '../images/me.png'
@@ -8,8 +9,8 @@ const Container = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  background-color: ${(props) => (props.light ? "#ececec" : "#1f1f1f")};
-  padding: 48px 12px;
+  background-color: ${(props) => (props.light ? "#ececec" : "#252525")};
+  padding: 64px 24px;
   ${md({padding: "96px 12px"})};
 `
 
@@ -81,32 +82,54 @@ const Resume = styled.div`
   ${md({textAlign: "left"})};
 `
 const Button = styled.button`
+  width: 250px;
   cursor: pointer;
   font-size: 20px;
-  padding: 5px 30px;
+  padding: 10px 30px;
+  font-weight: 500;
+  background: #FF6F3C;
+  color: #ececec;
+  border: solid 2px;
+  border-color: #FF6F3C;
+  transition: all 200ms ease-in-out;
   ${md({fontSize: "22px"})};
+
+  :hover{
+    background-color: transparent;
+    border: solid 2px;
+    color: ${(props) => (props.light ? "#FF6F3C" : "#ececec")};
+    border-color: ${(props) => (props.light ? "#FF6F3C" : "#ececec")};
+  }
+
+  :active{
+    transition: all 0ms;
+    color: ${(props) => (props.light ? "#252525" : "#FF6F3C")};
+    border-color: ${(props) => (props.light ? "#252525" : "#FF6F3C")};
+  }
 `
 
 function About({ theme }) {
+  Aos.init()
+
   return (
     <Container id="about" light={theme === "light"}>
-      <Title>About <Span>Me.</Span></Title>
+      <Title data-aos="fade">About <Span>Me.</Span></Title>
       <Wrapper>
-        <ImageContainer>
+        <ImageContainer data-aos="fade-up">
             <Image src={me} />
         </ImageContainer>
         <Description>
-            <Text>
+            <Text data-aos="fade-left">
               Building <Span>beautiful</Span>, <Span>responsive</Span> and <Span>customizable</Span> user experiences is my passion. I enjoy pushing myself to take problems and <Span>creating solutions</Span> that positively affect people.
             </Text>
-            <Text>
+            <Text data-aos="fade-left">
               Currently, I am a full-time <Span>computer science</Span> student, a part-time IT operator and private coding tutor.
             </Text>
-            <Text>
+            <Text data-aos="fade-left">
               Check out my resume!
             </Text>
-            <Resume>
-              <Button>
+            <Resume data-aos="fade-left">
+              <Button light={theme === "light"}>
                 Resume
               </Button>
             </Resume>

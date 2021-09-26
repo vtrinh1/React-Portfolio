@@ -1,3 +1,4 @@
+import Aos from 'aos'
 import React from 'react'
 import styled from 'styled-components'
 import { md } from '../responsive'
@@ -22,7 +23,7 @@ const SkillName = styled.div`
   bottom: 10px;
   transform: scale(0);
   transition: all 300ms;
-  font-size: 14px;
+  font-size: 13px;
   opacity: 0;
   font-weight: 600;
   ${md({fontSize: "16px"})};
@@ -32,7 +33,7 @@ const Container = styled.div`
   padding: 10px;
   width: 75px;
   color: #${(props)=>props.color};
-  background-color: ${(props) => (props.light ? "transparent" : "#1f1f1f")};
+  background-color: ${(props) => (props.light ? "transparent" : "#252525")};
   border-radius: 10%;
   box-shadow: 0px 3px 10px -3px rgba(0,0,0,0.54);
   margin: 10px;
@@ -54,8 +55,9 @@ const Container = styled.div`
 `
 
 function SkillItem({item, theme}) {
+  Aos.init()
   return (
-    <Container color={item.color} light={theme === "light"}>
+    <Container data-aos="fade-up" color={item.color} light={theme === "light"}>
       <SkillIconWrapper>
         <SkillIcon>{item.icon}</SkillIcon>
       </SkillIconWrapper>

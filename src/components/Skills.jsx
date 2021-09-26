@@ -1,11 +1,12 @@
-import React from 'react'
+import Aos from 'aos'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { languageItems, technologyItems } from '../data'
 import SkillItem from './SkillItem'
 import { md, xl } from '../responsive'
 
 const Container = styled.div`
-  padding: 48px 12px;
+  padding: 64px 12px;
   text-align: center;
   align-items: center;
   justify-content: flex-start;
@@ -50,7 +51,7 @@ const Skill = styled.div`
   ${md({maxWidth: "600px"})};
 
   :first-child {
-    margin-bottom: 24px;
+    margin-bottom: 48px;
     ${md({marginBottom: "64px"})};
     ${xl({marginBottom: "0"})};
   }  
@@ -69,14 +70,18 @@ const SkillTitle = styled.h2`
 `
 
 function Stack({ theme }) {
+  useEffect(() => {
+    Aos.init({ duration: 1000 })
+  }, [])
+  
   return (
     <Container id="skills">
-      <Title>
+      <Title data-aos="fade">
         My <Span>Skill Stack.</Span>
       </Title>
       <Wrapper>
         <Skill>
-          <SkillTitle>
+          <SkillTitle data-aos="fade-up">
             <Span>Technologies</Span> I've used.
           </SkillTitle>
             <SkillList>
@@ -86,7 +91,7 @@ function Stack({ theme }) {
             </SkillList>
         </Skill>
         <Skill>
-          <SkillTitle>
+          <SkillTitle data-aos="fade-up">
             <Span>Languages</Span> I've worked with.
           </SkillTitle>
             <SkillList>

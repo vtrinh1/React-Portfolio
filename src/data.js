@@ -124,7 +124,7 @@ export const projectItems = [
     img: project1,
     title: "Cryptocurrency App",
     subtitle: "HTML, CSS, Javascript, React.js, Redux, Ant Design",
-    info: "An app that gives the collects details on cryptocurrencies. It was designed using Ant Design and also fetches it's data from RapidAPI. It also includes state management using Redux Toolkit, charts using Chart.js.",
+    info: "An app that collects details on cryptocurrencies. It was designed using Ant Design and also fetches it's data from RapidAPI. It also includes state management using Redux Toolkit, charts using Chart.js.",
     github: "https://github.com/vtrinh1/Crypto-App",
     website: "https://vtrinh1-cryptohub.netlify.app/"
   },

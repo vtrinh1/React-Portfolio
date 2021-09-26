@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Email, LinkedIn, Twitter } from '@material-ui/icons';
-import GitHub from '@material-ui/icons/GitHub';
-import { md } from '../responsive';
+import Aos from "aos"
+import "aos/dist/aos.css"
+import { Email, LinkedIn, Twitter } from '@material-ui/icons'
+import GitHub from '@material-ui/icons/GitHub'
+import { md } from '../responsive'
 
 const Container = styled.div`
   text-align: center;
@@ -57,12 +59,14 @@ const SocialIcon = styled.a`
 `
 
 function Header() {
+    Aos.init({ duration: 1500 })
+
   return (
     <Container id="home">
       <Wrapper>
-      <HeaderTitle>Hey I'm <Span>Vincent.</Span></HeaderTitle>
-      <HeaderText>I'm an aspiring <Span>Frontend Software Engineer</Span> with a strong passion for building web applications with great user experiences.</HeaderText>
-      <SocialIcons>
+      <HeaderTitle data-aos="fade-up" data-aos-delay="500">Hey I'm <Span>Vincent.</Span></HeaderTitle>
+      <HeaderText data-aos="fade-up" data-aos-delay="750">I'm an aspiring <Span>Frontend Software Engineer</Span> with a strong passion for building web applications with great user experiences.</HeaderText>
+      <SocialIcons data-aos="fade-up" data-aos-delay="1500">
         <SocialIcon href="https://github.com/vtrinh1" target="_blank"><GitHub /></SocialIcon>
         <SocialIcon href="https://www.linkedin.com/in/vincenttrinh1/" target="_blank"><LinkedIn /></SocialIcon>
         <SocialIcon href="mailto:vincent.trinh1@hotmail.com" target="_blank"><Email /></SocialIcon>

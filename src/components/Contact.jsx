@@ -1,16 +1,17 @@
-import React, { useRef } from 'react';
+import Aos from 'aos'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { md } from '../responsive'
-import emailjs from 'emailjs-com';
+import emailjs from 'emailjs-com'
 
 const Container = styled.div`
-  padding: 48px 12px;
+  padding: 64px 12px 112px;
   text-align: center;
   align-items: center;
   justify-content: flex-start;
   display: flex;
   flex-direction: column;
-  ${md({padding: "96px 12px"})};
+  ${md({padding: "96px 12px 112px"})};
 `
 
 const Title = styled.h1`
@@ -45,85 +46,189 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 32px 48px;
+  padding: 17px 32px;
   border-radius: 20px;
   width: 100%;
-  background-color: rgba(204, 204, 204, 0.5);
+  background-color: ${(props) => (props.light ? "#fff" : "#252525")};
+  box-shadow: 0px 3px 10px -3px rgba(0,0,0,0.54);
+  ${md({padding: "32px 47px"})};
 `
 const Input = styled.input`
   padding: 5px 15px 5px 15px;
-  margin-bottom: 15px;
+  color: ${(props) => (props.light ? "#1b1b1b" : "#ececec")};
+  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: 16px;
   width: 100%;
   height: 32px;
-  border: none;
+  border: solid 2px #ececec;
   border-radius: 10px;
   outline: none;
-  opacity: 1;
+  background: transparent;
+  transition: all 200ms ease;
+  ${md({fontSize: "18px", marginBottom: "15px"})};
+
+  :focus{
+    border-color: #FF6F3C;
+  }
 `
 const TextArea = styled.textarea`
   padding: 10px 15px 10px 15px;
-  font-size: 18px;
+  color: ${(props) => (props.light ? "#1b1b1b" : "#ececec")};
+  font-size: 16px;
   width: 100%;
   height: 125px;
-  border: none;
+  border: solid 2px #ececec;
   border-radius: 10px;
   resize: none;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   outline: none;
+  background: transparent;
+  transition: all 200ms ease;
+  ${md({fontSize: "18px", marginBottom: "20px"})};
+
+  :focus{
+    border-color: #FF6F3C;
+  }
 `
 const Button = styled.button`
-  width: 105%;
+  width: 107%;
+  color: #ececec;
   height: 48px;
   border-radius: 10px;
-  border: none;
   font-size: 18px;
   margin-top: 10px;
   cursor: pointer;
   font-weight: 600;
-  background-color: gray;
+  background: #FF6F3C;
+  border: solid 2px;
+  border-color: #FF6F3C;
+  transition: all 200ms ease-in-out;
+  ${md({fontSize: "22px"})};
+
+  :hover{
+    background-color: transparent;
+    border: solid 2px;
+    color: ${(props) => (props.light ? "#FF6F3C" : "#ececec")};
+    border-color: ${(props) => (props.light ? "#FF6F3C" : "#ececec")};
+  }
+
+  :active{
+    transition: all 0ms;
+    color: ${(props) => (props.light ? "#252525" : "#FF6F3C")};
+    border-color: ${(props) => (props.light ? "#252525" : "#FF6F3C")};
+  }
 `
 
 
-function Contact() {
-  const form = useRef();
-  const sendEmail = (e) => {
-    e.preventDefault();
+function Contact({ theme }) {
+  Aos.init()
+  const {REACT_APP_SERVICE_KEY, REACT_APP_USER_KEY, REACT_APP_TEMPLATE_KEY} = process.env;
   
-    emailjs.sendForm('service_u7fwmgd', 'template_q79ixhk', form.current, 'user_9Onne8DOAZutOkPXRIfIR')
+  const form = useRef()
+
+  const [formState, setFormState] = useState({
+    name: null,
+    email: null,
+    message: null,
+  })
+
+  const [isValid, setIsValid] = useState(false)
+  const [showSuccess, setShowSuccess] = useState(false)
+  const [showMissing, setShowMissing] = useState(false)
+
+  function handleChange(e) {
+    setShowMissing(false)
+    setShowSuccess(false)
+    const value = e.target.value
+    const name = e.target.name
+    const id = e.target.id
+    let i = document.getElementById(id)
+
+    if (value === "" || value === null) {
+      i.style.border = "solid 2px red"
+    }
+
+    setFormState({
+      ...formState,
+      [name]: value
+    })
+  }
+
+  function highlightMissing() {
+    for (const [key, value] of Object.entries(formState)) {
+      if (value === "" || value === null) {
+        let i = document.getElementById(key)
+        i.style.borderColor = "red"
+      }
+    }
+  }
+
+  useEffect(() => {
+    const name = formState.name
+    const email = formState.email
+    const message =formState.message
+    if (name && email && message) {
+      setIsValid(true)
+    } else {
+      setIsValid(false)
+    }
+
+  }, [formState])
+
+  function sendEmail(e) {
+    e.preventDefault()
+
+    if (!isValid) {
+      highlightMissing()
+      setShowMissing(true)
+      return;
+    }
+
+
+    emailjs.sendForm(REACT_APP_SERVICE_KEY, REACT_APP_TEMPLATE_KEY, form.current, REACT_APP_USER_KEY)
       .then((result) => {
           console.log(result.text)
       }, (error) => {
           console.log(error.text)
-      })
-      form.current.reset()
+      });    
+
+    e.target.reset()
+
+    setShowSuccess(true)
   }
+
   return (
     <Container id="contact">
-      <Title>Get in <Span>Touch!</Span></Title>
+      <Title data-aos="fade">Get in <Span>Touch!</Span></Title>
       <Wrapper>
-        <Form ref={form} onSubmit={sendEmail}>
+        <Form  data-aos="fade-up" ref={form} onSubmit={sendEmail} light={theme === "light"}>
           <Input
             id="name"
             type="text"
             name="name"
             placeholder="Name"
+            light={theme === "light"}
+            onChange={handleChange}
           />
           <Input
             id="email"
             type="text"
             name="email"
             placeholder="Email"
+            light={theme === "light"}
+            onChange={handleChange}
           />
           <TextArea
             id="message"
             name="message"
             placeholder="Message"
+            light={theme === "light"}
+            onChange={handleChange}
           />
-          <Button type="submit" value="Send">
+          <Button type="submit" value="Send" light={theme === "light"}>
             Send
           </Button>
         </Form>

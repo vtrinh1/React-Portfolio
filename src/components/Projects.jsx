@@ -1,11 +1,12 @@
-import React from 'react'
+import Aos from 'aos'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { projectItems } from '../data'
 import { md } from '../responsive'
 import ProjectItem from './ProjectItem'
 
 const Container = styled.div`
-  padding: 48px 12px;
+  padding: 64px 12px;
   text-align: center;
   align-items: center;
   justify-content: flex-start;
@@ -51,9 +52,12 @@ const Wrapper = styled.div`
 
 
 function Projects({ theme }) {
+  useEffect(() => {
+    Aos.init({ duration: 1000 })
+  }, [])
   return (
     <Container id="projects" light={theme === "light"}>
-      <Title>Personal <Span>Projects.</Span></Title>
+      <Title data-aos="fade">Personal <Span>Projects.</Span></Title>
       <Wrapper>
           {projectItems.map((item) => (
               <ProjectItem item={item} key={item.id} />

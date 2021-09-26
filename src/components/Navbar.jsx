@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link as LinkS } from "react-scroll";
-import { FiMoon, FiSun } from "react-icons/fi";
+import { Link as LinkS } from "react-scroll"
+import { FiMoon, FiSun } from "react-icons/fi"
+import { md } from '../responsive'
+import Aos from 'aos'
 
 const Container = styled.div`
   justify-content: center;
@@ -11,10 +13,11 @@ const Container = styled.div`
 `
 
 const Wrapper = styled.div`
-  display: flex;
+  display: none;
   justify-content: space-between;
   width: 100%;
   max-width: 900px;
+  ${md({display: "flex"})};
 `
 const LeftWrapper = styled.div`
   display: flex;
@@ -76,11 +79,12 @@ const Toggle = styled.button`
 
 
 function Navbar({ themeToggler, theme }) {
+  Aos.init()
   const icon = theme === "light" ? <FiMoon color={"#000"} /> : <FiSun color={"#fff"} />
 
   return (
     <Container>
-      <Wrapper>
+      <Wrapper data-aos="fade">
         {/* left */}
         <LeftWrapper>
           <NavLink
