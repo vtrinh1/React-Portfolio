@@ -136,12 +136,12 @@ function Contact({ theme }) {
   })
 
   const [isValid, setIsValid] = useState(false)
-  const [showSuccess, setShowSuccess] = useState(false)
-  const [showMissing, setShowMissing] = useState(false)
+  // const [showSuccess, setShowSuccess] = useState(false)
+  // const [showMissing, setShowMissing] = useState(false)
 
   function handleChange(e) {
-    setShowMissing(false)
-    setShowSuccess(false)
+    // setShowMissing(false)
+    // setShowSuccess(false)
     const value = e.target.value
     const name = e.target.name
     const id = e.target.id
@@ -183,7 +183,7 @@ function Contact({ theme }) {
 
     if (!isValid) {
       highlightMissing()
-      setShowMissing(true)
+      // setShowMissing(true)
       return;
     }
 
@@ -197,7 +197,7 @@ function Contact({ theme }) {
 
     e.target.reset()
 
-    setShowSuccess(true)
+    // setShowSuccess(true)
   }
 
   return (
