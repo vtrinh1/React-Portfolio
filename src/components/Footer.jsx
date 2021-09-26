@@ -10,6 +10,7 @@ const Container = styled.div`
   padding: 24px;
   display: flex;
   justify-content: center;
+  z-index: 2;
 `
 const Wrapper = styled.div`
   width: 100%;

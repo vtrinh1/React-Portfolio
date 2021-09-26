@@ -3,10 +3,8 @@ import Particles from 'react-particles-js';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  position: absolute;
+  position: relative;
   margin-top: -100vh;
-  height: 100vh;
-  width: 99vw;
   z-index: -1;
 `
 
@@ -15,7 +13,7 @@ function ParticlesBackground() {
     <Container>
         <Particles
             height="100vh"
-            width="99vw"
+            width="100%"
                 params={{
                     "particles": {
                         "number": {
@@ -45,31 +43,6 @@ function ParticlesBackground() {
                             "outModes": {
                                 "default": "out",
                                 "bottom": "bounce"
-                            }
-                        }
-                    },
-                    "interactivity": {
-                        "events": {
-                            "onhover": {
-                                "enable": true,
-                                "mode": "bubble"
-                            },
-                            "onclick": {
-                                "enable": true,
-                                "mode": "repulse"
-                            }
-                        },
-                        "modes": {
-                            "bubble": {
-                                "distance": 200,
-                                "size": -1,
-                                "opacity": 0
-                            },
-                            "repulse": {
-                                "easing": "ease-in-out",
-                                "distance": 300,
-                                "duration": 1,
-                                "speed": 1
                             }
                         }
                     }

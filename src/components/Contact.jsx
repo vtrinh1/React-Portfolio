@@ -95,7 +95,7 @@ const TextArea = styled.textarea`
 `
 const Button = styled.button`
   width: 107%;
-  color: #ececec;
+  color: #fff;
   height: 48px;
   border-radius: 10px;
   font-size: 18px;
@@ -111,14 +111,33 @@ const Button = styled.button`
   :hover{
     background-color: transparent;
     border: solid 2px;
-    color: ${(props) => (props.light ? "#FF6F3C" : "#ececec")};
-    border-color: ${(props) => (props.light ? "#FF6F3C" : "#ececec")};
+    color: ${(props) => (props.light ? "#FF6F3C" : "#fff")};
+    border-color: ${(props) => (props.light ? "#FF6F3C" : "#fff")};
   }
 
   :active{
     transition: all 0ms;
     color: ${(props) => (props.light ? "#252525" : "#FF6F3C")};
     border-color: ${(props) => (props.light ? "#252525" : "#FF6F3C")};
+  }
+`
+const SentButton = styled.button`
+  width: 107%;
+  color: #fff;
+  height: 48px;
+  border-radius: 10px;
+  font-size: 18px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  background: #696969;
+  border: solid 2px;
+  border-color: #696969;
+  transition: all 200ms ease-in-out;
+  ${md({fontSize: "22px"})};
+
+  :hover{
+    cursor: not-allowed
   }
 `
 
@@ -136,19 +155,19 @@ function Contact({ theme }) {
   })
 
   const [isValid, setIsValid] = useState(false)
-  // const [showSuccess, setShowSuccess] = useState(false)
-  // const [showMissing, setShowMissing] = useState(false)
+  const [showSuccess, setShowSuccess] = useState(false)
 
   function handleChange(e) {
-    // setShowMissing(false)
-    // setShowSuccess(false)
+    setShowSuccess(false)
     const value = e.target.value
     const name = e.target.name
     const id = e.target.id
     let i = document.getElementById(id)
 
     if (value === "" || value === null) {
-      i.style.border = "solid 2px red"
+      i.style.borderColor = "red"
+    } else {
+      i.style.borderColor = "#FF6F3C"
     }
 
     setFormState({
@@ -183,8 +202,7 @@ function Contact({ theme }) {
 
     if (!isValid) {
       highlightMissing()
-      // setShowMissing(true)
-      return;
+      return
     }
 
 
@@ -193,11 +211,9 @@ function Contact({ theme }) {
           console.log(result.text)
       }, (error) => {
           console.log(error.text)
-      });    
-
-    e.target.reset()
-
-    // setShowSuccess(true)
+      })
+      
+    setShowSuccess(true)
   }
 
   return (
@@ -228,9 +244,17 @@ function Contact({ theme }) {
             light={theme === "light"}
             onChange={handleChange}
           />
+          {/* <Button type="submit" value="Send" light={theme === "light"}>
+            Send
+          </Button> */}
+          {showSuccess ? 
+          <SentButton light={theme === "light"}>
+            Sent!
+          </SentButton> :
           <Button type="submit" value="Send" light={theme === "light"}>
             Send
           </Button>
+          }
         </Form>
       </Wrapper>
     </Container>

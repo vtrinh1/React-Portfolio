@@ -66,7 +66,7 @@ export const technologyItems = [
     color: "4aa74a",
   },
   {
-    id: 8,
+    id: 11,
     icon: <SiRedux />,
     title: "Redux",
     color: "764abc",

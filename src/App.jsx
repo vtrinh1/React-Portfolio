@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme, GlobalStyles } from "./themes"
+import ScrollButton from './components/ScrollButton'
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -20,15 +21,16 @@ function App() {
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
     <div>
     <GlobalStyles/>
-      <Navbar themeToggler={themeToggler} theme={theme} />       
+      <ScrollButton />
+      <Navbar themeToggler={themeToggler} theme={theme} />
       <Header />
       <ParticlesBackground />
       <About theme={theme} />
       <Skills theme={theme} />
       <Projects theme={theme} />
       <Contact theme={theme} />
-      <ParticlesBackground />
       <Footer theme={theme} />
+      <ParticlesBackground />
     </div>
     </ThemeProvider>
   )

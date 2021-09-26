@@ -5,6 +5,7 @@ import "aos/dist/aos.css"
 import { Email, LinkedIn, Twitter } from '@material-ui/icons'
 import GitHub from '@material-ui/icons/GitHub'
 import { md } from '../responsive'
+import ScrollDown from './ScrollDown'
 
 const Container = styled.div`
   text-align: center;
@@ -58,21 +59,32 @@ const SocialIcon = styled.a`
   }
 `
 
+const ScrollDownWrapper = styled.div`
+  bottom: 5%;
+  position: absolute;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+`
+
 function Header() {
     Aos.init({ duration: 1500 })
 
   return (
     <Container id="home">
       <Wrapper>
-      <HeaderTitle data-aos="fade-up" data-aos-delay="500">Hey I'm <Span>Vincent.</Span></HeaderTitle>
-      <HeaderText data-aos="fade-up" data-aos-delay="750">I'm an aspiring <Span>Frontend Software Engineer</Span> with a strong passion for building web applications with great user experiences.</HeaderText>
-      <SocialIcons data-aos="fade-up" data-aos-delay="1500">
-        <SocialIcon href="https://github.com/vtrinh1" target="_blank"><GitHub /></SocialIcon>
-        <SocialIcon href="https://www.linkedin.com/in/vincenttrinh1/" target="_blank"><LinkedIn /></SocialIcon>
-        <SocialIcon href="mailto:vincent.trinh1@hotmail.com" target="_blank"><Email /></SocialIcon>
-        <SocialIcon href="https://twitter.com/VinnieTrinnie" target="_blank"><Twitter /></SocialIcon>
-      </SocialIcons>
+        <HeaderTitle data-aos="fade-up" data-aos-delay="500">Hey I'm <Span>Vincent.</Span></HeaderTitle>
+        <HeaderText data-aos="fade-up" data-aos-delay="750">I'm an aspiring <Span>Frontend Software Engineer</Span> with a strong passion for building web applications with great user experiences.</HeaderText>
+        <SocialIcons data-aos="fade-up" data-aos-delay="1000">
+          <SocialIcon href="https://github.com/vtrinh1" target="_blank"><GitHub /></SocialIcon>
+          <SocialIcon href="https://www.linkedin.com/in/vincenttrinh1/" target="_blank"><LinkedIn /></SocialIcon>
+          <SocialIcon href="mailto:vincent.trinh1@hotmail.com" target="_blank"><Email /></SocialIcon>
+          <SocialIcon href="https://twitter.com/VinnieTrinnie" target="_blank"><Twitter /></SocialIcon>
+        </SocialIcons>
       </Wrapper>
+      <ScrollDownWrapper data-aos="fade-down" data-aos-delay="1250" data-aos-anchor-placement="top">
+        <ScrollDown />
+      </ScrollDownWrapper>
     </Container>
   )
 }

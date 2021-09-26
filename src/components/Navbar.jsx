@@ -2,22 +2,22 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link as LinkS } from "react-scroll"
 import { FiMoon, FiSun } from "react-icons/fi"
-import { md } from '../responsive'
+import { md, sm } from '../responsive'
 import Aos from 'aos'
 
 const Container = styled.div`
   justify-content: center;
   display: flex;
   height: 64px;
-  padding: 15px 48px;
+  padding: 15px 5px;
+  ${sm({padding: "15px 48px"})};
 `
 
 const Wrapper = styled.div`
-  display: none;
+  display: flex;
   justify-content: space-between;
   width: 100%;
   max-width: 900px;
-  ${md({display: "flex"})};
 `
 const LeftWrapper = styled.div`
   display: flex;
@@ -36,9 +36,10 @@ const RightWrapper = styled.div`
 const NavLink = styled(LinkS)`
   position: relative;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 16px;
   cursor: pointer;
-  padding: 10px 25px;
+  padding: 10px 10px;
+  ${md({fontSize: "24px", padding: "10px 25px"})};
 
   &:hover:after { 
       width: 80%;
@@ -90,7 +91,7 @@ function Navbar({ themeToggler, theme }) {
           <NavLink
               to="about"
               smooth={true}
-              duration={750}
+              duration={1000}
               exact="true"
               light={theme === "light"}
             >
@@ -99,7 +100,7 @@ function Navbar({ themeToggler, theme }) {
             <NavLink
               to="skills"
               smooth={true}
-              duration={750}
+              duration={1000}
               exact="true"
               light={theme === "light"}
             >
@@ -108,7 +109,7 @@ function Navbar({ themeToggler, theme }) {
             <NavLink
               to="projects"
               smooth={true}
-              duration={750}
+              duration={1000}
               exact="true"
               light={theme === "light"}
             >
@@ -117,7 +118,7 @@ function Navbar({ themeToggler, theme }) {
             <NavLink
               to="contact"
               smooth={true}
-              duration={750}
+              duration={1000}
               exact="true"
               light={theme === "light"}
             >

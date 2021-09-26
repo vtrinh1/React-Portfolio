@@ -3,6 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import me from '../images/me.png'
 import { md } from '../responsive'
+import Pdf from '../assets/resume.pdf'
 
 const Container = styled.div`
   text-align: center;
@@ -79,26 +80,26 @@ const Text = styled.p`
 
 const Resume = styled.div`
   text-align: center;
+  margin-top: 12px;
   ${md({textAlign: "left"})};
 `
-const Button = styled.button`
-  width: 250px;
+const Button = styled.a`
   cursor: pointer;
   font-size: 20px;
-  padding: 10px 30px;
+  padding: 10px 80px;
   font-weight: 500;
   background: #FF6F3C;
-  color: #ececec;
-  border: solid 2px;
-  border-color: #FF6F3C;
+  color: #fff;
+  border: solid 2px #FF6F3C;
+  text-decoration: none;
   transition: all 200ms ease-in-out;
   ${md({fontSize: "22px"})};
 
   :hover{
     background-color: transparent;
     border: solid 2px;
-    color: ${(props) => (props.light ? "#FF6F3C" : "#ececec")};
-    border-color: ${(props) => (props.light ? "#FF6F3C" : "#ececec")};
+    color: ${(props) => (props.light ? "#FF6F3C" : "#fff")};
+    border-color: ${(props) => (props.light ? "#FF6F3C" : "#fff")};
   }
 
   :active{
@@ -129,7 +130,7 @@ function About({ theme }) {
               Check out my resume!
             </Text>
             <Resume data-aos="fade-left">
-              <Button light={theme === "light"}>
+              <Button light={theme === "light"} target="_blank" href={Pdf}>
                 Resume
               </Button>
             </Resume>
