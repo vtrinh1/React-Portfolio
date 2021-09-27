@@ -124,7 +124,7 @@ export const projectItems = [
     img: project1,
     title: "Cryptocurrency App",
     subtitle: "HTML, CSS, Javascript, React.js, Redux, Ant Design",
-    info: "An app that collects details on cryptocurrencies. It was designed using Ant Design and also fetches it's data from RapidAPI. It also includes state management using Redux Toolkit, charts using Chart.js.",
+    info: "An app that collects details on cryptocurrencies. It was designed using Ant Design and also fetches it's data from RapidAPI. It also includes state management using Redux Toolkit and charts using Chart.js.",
     github: "https://github.com/vtrinh1/Crypto-App",
     website: "https://vtrinh1-cryptohub.netlify.app/"
   },
@@ -142,7 +142,7 @@ export const projectItems = [
     img: project3,
     title: "Airbnb Clone",
     subtitle: "HTML, CSS, Javascript, Next.js, Tailwind CSS",
-    info: "An Airbnb website clone built with Next.js and Tailwind CSS. It features a home and search results page with server side rendering implemented into it and uses a custom map from Mapbox. All its data is extracted from my own static APIs.",
+    info: "An Airbnb website clone built with Next.js and Tailwind CSS. It features a home and search results page with server side rendering implemented into it. All its data is extracted from my own static APIs and uses a custom map from Mapbox.",
     github: "https://github.com/vtrinh1/Airbnb-Clone",
     website: "https://vtrinh1-airbnb-clone.netlify.app/"
   },

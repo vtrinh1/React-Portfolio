@@ -74,7 +74,7 @@ function Header() {
     <Container id="home">
       <Wrapper>
         <HeaderTitle data-aos="fade-up" data-aos-delay="500">Hey I'm <Span>Vincent.</Span></HeaderTitle>
-        <HeaderText data-aos="fade-up" data-aos-delay="750">I'm an aspiring <Span>Frontend Software Engineer</Span> with a strong passion for building web applications with great user experiences.</HeaderText>
+        <HeaderText data-aos="fade-up" data-aos-delay="750">I'm an aspiring <Span>Frontend Software Engineer</Span> passionate about building web applications with great user experiences.</HeaderText>
         <SocialIcons data-aos="fade-up" data-aos-delay="1000">
           <SocialIcon href="https://github.com/vtrinh1" target="_blank"><GitHub /></SocialIcon>
           <SocialIcon href="https://www.linkedin.com/in/vincenttrinh1/" target="_blank"><LinkedIn /></SocialIcon>

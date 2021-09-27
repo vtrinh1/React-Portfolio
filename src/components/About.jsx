@@ -120,16 +120,16 @@ function About({ theme }) {
             <Image src={me} />
         </ImageContainer>
         <Description>
-            <Text data-aos="fade-left">
+            <Text data-aos="fade-up">
               Building <Span>beautiful</Span>, <Span>responsive</Span> and <Span>customizable</Span> user experiences is my passion. I enjoy pushing myself to take problems and <Span>creating solutions</Span> that positively affect people.
             </Text>
-            <Text data-aos="fade-left">
-              Currently, I am a full-time <Span>computer science</Span> student, a part-time IT operator and private coding tutor.
+            <Text data-aos="fade-up">
+              Currently, I am a full-time <Span>computer science</Span> student, a part-time IT operator and private programming tutor.
             </Text>
-            <Text data-aos="fade-left">
+            <Text data-aos="fade-up">
               Check out my resume!
             </Text>
-            <Resume data-aos="fade-left">
+            <Resume data-aos="fade-up">
               <Button light={theme === "light"} target="_blank" href={Pdf}>
                 Resume
               </Button>

@@ -6,7 +6,7 @@ import SkillItem from './SkillItem'
 import { md, xl } from '../responsive'
 
 const Container = styled.div`
-  padding: 64px 12px;
+  padding: 64px 4px;
   text-align: center;
   align-items: center;
   justify-content: flex-start;

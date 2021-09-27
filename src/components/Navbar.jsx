@@ -38,7 +38,7 @@ const NavLink = styled(LinkS)`
   font-weight: 500;
   font-size: 16px;
   cursor: pointer;
-  padding: 10px 10px;
+  padding: 10px 6px;
   ${md({fontSize: "24px", padding: "10px 25px"})};
 
   &:hover:after { 
@@ -65,8 +65,9 @@ const Toggle = styled.button`
     cursor: pointer;
     border: none;
     background: none;
-    font-size: 32px;
+    font-size: 24px;
     transition: all 150ms;
+    ${md({fontSize: "32px"})};
 
   :hover  {
     transform: scale(1.1);

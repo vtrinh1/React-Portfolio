@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   position: relative;
   margin-top: -100vh;
-  z-index: -1;
+  z-index: -3;
 `
 
 function ParticlesBackground() {
