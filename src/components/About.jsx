@@ -121,7 +121,7 @@ function About({ theme }) {
         </ImageContainer>
         <Description>
             <Text data-aos="fade-up">
-              Building <Span>beautiful</Span>, <Span>responsive</Span> and <Span>customizable</Span> user experiences is my passion. I enjoy pushing myself to take problems and <Span>creating solutions</Span> that positively affect people.
+              Building <Span>beautiful</Span>, <Span>customisable</Span> and <Span>responsive</Span> user experiences is my passion. I enjoy pushing myself to solve problems and <Span>creating solutions</Span> that positively affect people.
             </Text>
             <Text data-aos="fade-up">
               Currently, I am a full-time <Span>computer science</Span> student, a part-time IT operator and private programming tutor.
