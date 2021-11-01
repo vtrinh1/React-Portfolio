@@ -76,10 +76,17 @@ function Header() {
         <HeaderTitle data-aos="fade-up" data-aos-delay="750">Hey I'm <Span>Vincent.</Span></HeaderTitle>
         <HeaderText data-aos="fade-up" data-aos-delay="1000">I'm an aspiring <Span>Frontend Software Engineer</Span> passionate about building web applications with great user experiences.</HeaderText>
         <SocialIcons>
-          <SocialIcon href="https://github.com/vtrinh1" target="_blank" data-aos="fade-up" data-aos-delay="1250"><GitHub /></SocialIcon>
-          <SocialIcon href="https://www.linkedin.com/in/vincenttrinh1/" target="_blank" data-aos="fade-up" data-aos-delay="1300"><LinkedIn /></SocialIcon>
-          <SocialIcon href="mailto:vincent.trinh1@hotmail.com" target="_blank" data-aos="fade-up" data-aos-delay="1350"><Email /></SocialIcon>
-          <SocialIcon href="https://twitter.com/VinnieTrinnie" target="_blank" data-aos="fade-up" data-aos-delay="1400"><Twitter /></SocialIcon>
+          <div data-aos="fade-up" data-aos-delay="1250">
+            <SocialIcon href="https://github.com/vtrinh1" target="_blank"><GitHub /></SocialIcon>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="1300">
+            <SocialIcon href="https://www.linkedin.com/in/vincenttrinh1/" target="_blank"><LinkedIn /></SocialIcon>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="1350">
+          <SocialIcon href="mailto:vincent.trinh1@hotmail.com" target="_blank"><Email /></SocialIcon></div>
+          <div data-aos="fade-up" data-aos-delay="1400">
+            <SocialIcon href="https://twitter.com/VinnieTrinnie" target="_blank"><Twitter /></SocialIcon>
+          </div>
         </SocialIcons>
       </Wrapper>
       <ScrollDownWrapper data-aos="fade-down" data-aos-delay="1750" data-aos-anchor-placement="top">
